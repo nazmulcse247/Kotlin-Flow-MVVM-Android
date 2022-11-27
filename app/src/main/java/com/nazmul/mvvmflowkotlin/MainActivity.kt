@@ -35,6 +35,10 @@ class MainActivity : AppCompatActivity() {
         binding.rvTvShow.adapter = adapter
 
 
+        bindTvshowUIObserver()
+    }
+
+    private fun bindTvshowUIObserver() {
         adapter.addLoadStateListener { loadState ->
             // show empty list
             if (loadState.refresh is LoadState.Loading ||
@@ -64,6 +68,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }
 
 
